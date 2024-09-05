@@ -51,8 +51,8 @@ function Home() {
   return (
     <div className="Home">
       <Navigation />
-      <div className="pt-6 md:pt-10 px-9 lg:px-14">
-        <div className="max-w-[1200px] flex flex-col-reverse lg:flex-row items-center m-auto">
+      <div className="pt-6 md:pt-10">
+        <div className="max-w-[1200px] flex flex-col-reverse lg:flex-row items-center m-auto px-9 lg:px-14">
           <div className="max-w-[670px] w-full">
             <h1 className="text-white text-center lg:text-left text-3xl lg:text-7xl font-bold">
               The sweetest protocol builders on the blockchain
@@ -85,7 +85,7 @@ function Home() {
         </div>
 
         <section>
-          <div className="max-w-[1200px] m-auto py-8">
+          <div className="max-w-[1200px] m-auto py-8 px-9 lg:px-14">
             <h1 className="text-[#594f58]">Our partners and clients</h1>
             <div className="mt-2">
               <img src="/home.png" alt="banner" />
@@ -95,10 +95,10 @@ function Home() {
 
         <section>
           <div className="max-w-[1300px] rounded-xl m-auto pt-8 sectionGradient">
-            <h1 className="text-white text-center mb-4 text-3xl lg:text-5xl font-medium tracking-wide pt-14">
+            <h1 className="text-white text-center mb-4 text-3xl lg:text-5xl font-medium tracking-wide pt-14 px-9 lg:px-14">
               Our Products
             </h1>
-            <p className="text-[#b4a5c1] text-center mb-4">
+            <p className="text-[#b4a5c1] text-center mb-4 px-9 lg:px-14">
               We build innovative blockchain products that move the ecosystem
               forward.
             </p>
@@ -124,17 +124,17 @@ function Home() {
 
         <section>
         <div className="max-w-[1300px] m-auto mt-8">
-          <div>
+          <div className="px-9 lg:px-14">
             <h1 className="text-white text-center mb-4 text-3xl lg:text-5xl font-medium tracking-wide pt-14">Testimonials</h1>
             <p className="text-[#b4a5c1] text-center mb-4">We're proud to work with some amazing partners and customers.</p>
           </div>
-          <div>
+          <div className="px-4 lg:px-14">
             <img src="/test.png" alt="img" className="rounded-xl" />
           </div>
         </div>
         </section>
 
-        <section className="max-w-[1300px] m-auto mt-10">
+        <section className="max-w-[1300px] m-auto mt-10 px-4 lg:px-14">
           <img src="/last.png" alt="img" className="rounded-xl" />
         </section>
       </div>
