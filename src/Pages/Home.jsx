@@ -107,16 +107,24 @@ function Home() {
                 <img
                   src="/imgone.png"
                   alt="image"
-                  className="rounded-xl w-full"
+                  className="rounded-xl w-full  hidden lg:block"
                 />
-                <img src="/imgtwo.png" alt="image" className="w-full" />
+                  <img src="/respzero.png" alt="image" className="rounded-xl block lg:hidden"/>
+
+                <img src="/imgtwo.png" alt="image" className="w-full hidden lg:block" />
+
+                <div className="flex flex-col gap-4">
+                  <img src="/respone.PNG" alt="image" className="rounded-xl block lg:hidden"/>
+                  <img src="/resptwo.PNG" alt="image" className="rounded-xl block lg:hidden"/>
+                </div>
               </div>
               <div className="pt-6 pb-15 px-6 lg:px-14">
                 <img
                   src="/imgthree.png"
                   alt="image"
-                  className="w-full rounded-xl"
+                  className="w-full rounded-xl hidden lg:block"
                 />
+                  <img src="/respthrree.PNG" alt="image" className="rounded-xl block lg:hidden"/>
               </div>
             </div>
           </div>
@@ -129,13 +137,16 @@ function Home() {
             <p className="text-[#b4a5c1] text-center mb-4">We're proud to work with some amazing partners and customers.</p>
           </div>
           <div className="px-4 lg:px-14">
-            <img src="/test.png" alt="img" className="rounded-xl" />
+            <img src="/test.png" alt="img" className="rounded-xl  hidden lg:block" />
+            <img src="/respfour.PNG" alt="image" className="rounded-xl block lg:hidden"/>
+
           </div>
         </div>
         </section>
 
         <section className="max-w-[1300px] m-auto mt-10 px-4 lg:px-14">
-          <img src="/last.png" alt="img" className="rounded-xl" />
+          <img src="/last.png" alt="img" className="rounded-xl hidden lg:block" />
+          <img src="/respfive.png" alt="image" className="rounded-xl block lg:hidden"/>
         </section>
       </div>
       <Footer />
