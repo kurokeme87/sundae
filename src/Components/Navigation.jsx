@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,13 +33,13 @@ function Navigation() {
             </svg>
           </li>
           <li className="hover:text-[#f070d0] ease-in-out duration-500 cursor-pointer">
-            Services
+           <Link to='https://sundae.fi/services'>Services</Link>
           </li>
           <li className="hover:text-[#f070d0] ease-in-out duration-500 cursor-pointer">
-            News & Updates
+           <Link to='https://sundae.fi/posts'>News & Updates</Link>
           </li>
           <li className="hover:text-[#f070d0] ease-in-out duration-500 cursor-pointer">
-            Careers
+           <Link to='https://sundae.fi/careers'>Careers</Link>
           </li>
         </ol>
 
