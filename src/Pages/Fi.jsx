@@ -56,19 +56,17 @@ function Fi() {
 
 
         {/* Hero 4 */}
-        <section className='flex flex-col bg-[#0A91EA] md:flex-row py-5 md:py-0 md:mt-3 mx-2 rounded-2xl'>
-          <div>
+        <section className='flex flex-col md:flex-row bg-[#0A91EA] py-5 md:py-0 px-0 md:px-6 md:mt-3 mx-2 rounded-2xl'>
+          <div className='flex basis-1/2'>
             <div className='flex flex-col gap-4 px-6 rounded-3xl justify-center'>
               <p className='text-4xl font-medium text-gray-200 '>Start trading now.</p>
               <p className='text-xl font-semibold text-gray-200/60'>Connect your wallet and start trading Caradno assets with Sundae.</p>
-              <CWButton bgcol=" bg-gray-800 hover:bg-gray-800/75 transition duration-300" />
-            </div>
-            <div className='hidden lg:flex items-center justify-center rounded-2xl'>
-              <img src='../../public/cta1.png'
-                className='max-w-[70%] drop-shadow-lg rounded-none object-cover motion-safe:animate-fadeIn no-js-trade_now' />
-              {/* <img className="max-w-[70%] drop-shadow-lg rounded-none object-cover motion-safe:animate-fadeIn no-js-trade_now" src="../../public/cta1.png" width="441" style="aspect-ratio: 1 / 1;"></img> */}
+              <CWButton bgcol=" bg-gray-800 hover:bg-gray-800/75 transition duration-300 font-medium" text="Connect Wallet"/>
             </div>
           </div>
+            <div className='hidden md:flex basis-1/2 items-center justify-center rounded-2xl'>
+              <img className="max-w-[70%] drop-shadow-lg rounded-none object-cover aspect-square" src="../../public/cta1.png" width="401"/>
+            </div>
 
 
         </section>

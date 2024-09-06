@@ -12,7 +12,7 @@ const Navigation2 = () => {
   ]
   const [isMenyOpen, setisMenyOpen] = useState(false)
   return (
-    <nav className="z-50 sticky top-0 bg-[#0F0619] opacity-95 flex justify-center items-center w-full h-[4.5rem] md:h-[5.3rem] px-5 border-b border-gray-200/10">
+    <nav className="z-50 sticky top-0 bg-[#0F0619] flex justify-center items-center w-full h-[4.5rem] md:h-[5.3rem] px-5 border-b border-gray-200/10">
 
       {/* inner div */}
       <div className="h-10 w-full flex justify-between text-sm">
@@ -68,7 +68,7 @@ const Navigation2 = () => {
       </div>
 
       {/* Mobile Menu */}
-      <div className={`fixed md:hidden ${isMenyOpen?"left-0":"left-[100%]"} transition-all duration-300 top-[4.5rem] w-full h-[100rem] bg-[#0F0619]`}>
+      <div className={`fixed ${isMenyOpen?"left-0":"left-[100%]"} transition-all duration-300 top-[4.5rem] w-full h-[100dvh] bg-[#0F0619]`}>
         {/* Connect walltet buttong */}
         <div className="flex justify-center pt-4 pb-2">
           <button className={`flex gap-2 text-sm items-center justify-center disabled:cursor-not-allowed disabled:opacity-60 group transition duration-300 border active:scale-[0.975] relative overflow-hidden group border-none text-white bg-gradient-to-r from-secondary to-primary hover:from-secondary-300 hover:to-primary-300 min-w-[125px] px-3 py-2 text-lg h-full max-h-8 rounded-lg lg:w-fit`}>
