@@ -19,7 +19,7 @@ function Fi() {
             <CWButton />
           </div>
           <div className='flex basis-1/2 items-center justify-center p-6 rounded-3xl'>
-            <img src='../../public/hero1.png'
+            <img src='/hero1.png'
               className="mx-auto max-w-[60%] aspect-[0.649485 / 1] drop-shadow-lg xxl:max-w-[70%] bg-gray-200/30 dark:bg-gray-800/40 transition-colors duration-300 rounded-none !bg-transparent object-cover motion-safe:animate-fadeIn no-js-fast_easy_secure"
               width={378}
             />
@@ -29,7 +29,7 @@ function Fi() {
         {/* Hero 2 */}
         <section className='flex flex-col bg-[linear-gradient(210deg,_#0E132E_0%,_transparent_50%)] md:flex-row px-8 py-20 mt-3'>
           <div className='order-2 md:order-1 flex basis-1/2 items-center justify-center p-16 rounded-3xl'>
-            <img src='../../public/hero2.png'
+            <img src='/hero2.png'
             />
           </div>
           <div className='order-1 md:order-2 flex flex-col gap-6 rounded-3xl basis-1/2 justify-center'>
@@ -48,7 +48,7 @@ function Fi() {
             <CWButton />
           </div>
           <div className='flex basis-1/2 items-center justify-center px-24 md:p-32 rounded-3xl'>
-            <img src='../../public/hero3.png'
+            <img src='/hero3.png'
             // className='size-[70%] md:size-[80%] '
             />
           </div>
@@ -65,7 +65,7 @@ function Fi() {
             </div>
           </div>
             <div className='hidden md:flex basis-1/2 items-center justify-center rounded-2xl'>
-              <img className="max-w-[70%] drop-shadow-lg rounded-none object-cover aspect-square" src="../../public/cta1.png" width="401"/>
+              <img className="max-w-[70%] drop-shadow-lg rounded-none object-cover aspect-square" src="/cta1.png" width="401"/>
             </div>
 
 

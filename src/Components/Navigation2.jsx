@@ -21,7 +21,7 @@ const Navigation2 = () => {
         <div className="flex">
           {/* logo */}
           <div className="h-full aspect-square p-1 mr-7">
-            <img className="w-full h-full" src="../../public/icon.png" />
+            <img className="w-full h-full" src="/icon.png" />
           </div>
 
           {/* Links */}
