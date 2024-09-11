@@ -1,8 +1,7 @@
 // import React from 'react'
 import { useState } from "react";
 import { Link } from "react-router-dom";
-const Navigation2 = () => {
-  const buttonClass = "px-4 h-full flex items-center justify-center rounded-md";
+const Navigation2 = ({currentTab}) => {
   const linkButtons = [
     { name: "Home", path: "/fi" },
     { name: "Exchange", path: "/fi/exchange" },
@@ -10,6 +9,7 @@ const Navigation2 = () => {
     { name: "Yield Farming", path: "/yield-farming" },
     { name: "Taste Test", path: "/taste-test" },
   ];
+  const [activeTab, setactiveTab] = useState(currentTab)
   const [isMenyOpen, setisMenyOpen] = useState(false);
   return (
     <nav className="z-50 sticky top-0 bg-[#0F0619] flex justify-center items-center w-full h-[4.5rem] md:h-[5.3rem] px-5 border-b border-gray-200/10">
@@ -23,9 +23,16 @@ const Navigation2 = () => {
           </div>
 
           {/* Links */}
-          <div className="hidden md:flex text-gray-200 gap-1">
+          <div className="hidden md:flex text-white gap-2 py-[2px]">
             {linkButtons.map((item, index) => (
-              <Link to={item.path} className={buttonClass} key={index}>
+              <Link to={item.path} key={index} 
+              className={`px-3 h-full flex items-center justify-center rounded-md hover:bg-[#0E2142] transition-colors duration-300 ${
+                activeTab === item.name
+                  ? 'text-primary bg-primary/20'
+                  : 'text-gray-200 hover:text-gray-200'
+              }`}
+              onClick={()=>{setactiveTab(item.name)}}
+              >
                 <span>{item.name}</span>
               </Link>
             ))}

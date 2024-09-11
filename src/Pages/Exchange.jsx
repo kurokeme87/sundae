@@ -10,7 +10,7 @@ function Exchange() {
   return (
     <div>
       <section className="bg-[#0F0619] text-gray-400 scrollbar-custom" style={{height:"100vh"}}>
-        <Navigation2 />
+        <Navigation2 currentTab={"Exchange"}/>
         <div className="relative grid place-items-center gap-4 lg:gap-8 lg:grid-cols-1 pt-8  md:pt-20 px-4">
           <div className="relative order-1 mx-auto flex h-fit w-full max-w-lg flex-col gap-8 self-start lg:order-2 lg:col-span-3 xl:col-span-2 xl:mx-0">
             <div data-guide-selector="exchange-widget">

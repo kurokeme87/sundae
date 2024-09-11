@@ -6,7 +6,7 @@ import Navigation2 from '../Components/Navigation2'
 function Fi() {
   return (
     <section className=' bg-[#0F0619] text-offwhite scrollbar-custom'>
-      <Navigation2 />
+      <Navigation2 currentTab={"Home"}/>
 
       {/* body*/}
       <div className='flex flex-col gap-10 px-2 md:px-10'>
