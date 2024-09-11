@@ -1,11 +1,15 @@
 import { useState } from "react";
 import CWButton from "../Components/CWButton";
+import AssetSwapModal from "../Components/AssetSwapModal";
 import Navigation2 from "../Components/Navigation2";
 import { Sliders, ChevronDown, ArrowDown, Info } from "lucide-react";
 
 function Exchange() {
   const [activeTab, setActiveTab] = useState('Market');
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const bgcol = 'gradient-to-r from-secondary to-primary hover:from-secondary-300 hover:to-primary-300'
+
+  const openModal = () => setIsModalOpen(true);
 
   return (
     <div>
@@ -46,6 +50,7 @@ function Exchange() {
                       asset="ADA"
                       balance="0.00"
                       usdValue="$0.00"
+                      onAssetClick={openModal}
                     />
                     
                     <div className="z-10 h-8 w-8 rounded-full !transition-all active:scale-[0.975] text-gray-400 border-[#0f0619] border-4 bg-[#120b1b] cursor-not-allowed select-none text-gray-400 absolute right-1/2 translate-x-1/2 bottom-1/2 translate-y-1/2" style={{marginBottom:"30px"}}>
@@ -57,13 +62,15 @@ function Exchange() {
                       asset="Select Token"
                       balance="0"
                       showUsdValue={false}
+                      onAssetClick={openModal}
                     />
                   </div>
                   <button className={`flex gap-2 items-center justify-center disabled:cursor-not-allowed disabled:opacity-60 group transition duration-300 border active:scale-[0.975] relative overflow-hidden group border-none text-white bg-${bgcol} min-w-[125px] px-5 text-lg h-11 rounded-lg lg:w-full`}>
-                  Connect Wallet
-    </button>
+                    Connect Wallet
+                  </button>
                 </div>
               </div>
+              <AssetSwapModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
             </div>
           </div>
         </div>
@@ -72,7 +79,7 @@ function Exchange() {
   );
 }
 
-const AssetInput = ({ label, asset, balance, usdValue, showUsdValue = true }) => {
+const AssetInput = ({ label, asset, balance, usdValue, showUsdValue = true, onAssetClick }) => {
   return (
     <div className="relative flex flex-col space-y-2">
       <div className="grid min-h-[132px] gap-4 rounded-lg border-transparent p-4 transition-colors duration-300 border hover:border-gray-600 hover:border-1 bg-[#120b1b]">
@@ -93,7 +100,10 @@ const AssetInput = ({ label, asset, balance, usdValue, showUsdValue = true }) =>
                 }}
               />
             </div>
-            <div className="flex items-center gap-2 h-9 w-fit rounded-full select-none border-gray-600 border shadow-lg transition duration-300 active:scale-[0.975] cursor-pointer hover:bg-gray-700 pl-1 pr-2">  
+            <div 
+              onClick={onAssetClick}
+              className="flex items-center gap-2 h-9 w-fit rounded-full select-none border-gray-600 border shadow-lg transition duration-300 active:scale-[0.975] cursor-pointer hover:bg-gray-700 pl-1 pr-2"
+            >  
               {asset === 'ADA' ? (
                 <span className="bg-[#0F0619] transition duration-300 h-6 w-6 rounded-full">
                   <img

@@ -62,9 +62,11 @@ function Home() {
               power the next generation of global financial services.
             </p>
             <div className="mt-8 flex flex-col lg:flex-row gap-4 justify-center lg:justify-start max-w-lg m-auto lg:mx-0">
-              <button className="buttonGradient text-white text-lg rounded-full px-10 py-2 max-w-md w-full m-auto">
-                <Link to="/fi">Open SundaeSwap</Link>
-              </button>
+              <Link to="/fi" className="buttonGradient text-white text-lg rounded-full px-10 py-2 max-w-md w-full m-auto">
+                <button className="w-full">
+                  Open SundaeSwap
+                </button>
+              </Link>
               <button className="buttonBorderGradient text-white text-lg px-10 py-2 max-w-md w-full m-auto">
                 <span>
                   {" "}
@@ -118,17 +120,11 @@ function Home() {
                   />
                 </Link>
 
-
                 <Link
                   to="https://sundae.fi/products/rewards"
                   className="w-full block lg:hidden"
                 >
-
-                <img
-                  src="/respzero.png"
-                  alt="image"
-                  className="rounded-xl"
-                />
+                  <img src="/respzero.png" alt="image" className="rounded-xl" />
                 </Link>
 
                 <Link
@@ -143,50 +139,46 @@ function Home() {
                 </Link>
 
                 <div className="flex flex-col gap-4">
-                <Link
-                  to="https://sundae.fi/products/governance"
-                  className="w-full block lg:hidden"
-                >
-                  <img
-                    src="/respone.PNG"
-                    alt="image"
-                    className="rounded-xl"
-                  />
+                  <Link
+                    to="https://sundae.fi/products/governance"
+                    className="w-full block lg:hidden"
+                  >
+                    <img
+                      src="/respone.PNG"
+                      alt="image"
+                      className="rounded-xl"
+                    />
                   </Link>
 
                   <Link
-                  to="https://sundae.fi/products/sundaeswap"
-                  className="w-full block lg:hidden"
-                >
-                  <img
-                    src="/resptwo.PNG"
-                    alt="image"
-                    className="rounded-xl"
-                  />
+                    to="https://sundae.fi/products/sundaeswap"
+                    className="w-full block lg:hidden"
+                  >
+                    <img
+                      src="/resptwo.PNG"
+                      alt="image"
+                      className="rounded-xl"
+                    />
                   </Link>
                 </div>
               </div>
               <div className="pt-6 pb-15 px-6 lg:px-14">
-              
-              <Link
-                  to="https://sundae.fi/contact"
-                  className="w-full"
-                >
-                <img
-                  src="/imgthree.png"
-                  alt="image"
-                  className="w-full rounded-xl hidden lg:block"
-                />
+                <Link to="https://sundae.fi/contact" className="w-full">
+                  <img
+                    src="/imgthree.png"
+                    alt="image"
+                    className="w-full rounded-xl hidden lg:block"
+                  />
                 </Link>
                 <Link
                   to="https://sundae.fi/contact"
                   className="w-full block lg:hidden"
                 >
-                <img
-                  src="/respthrree.PNG"
-                  alt="image"
-                  className="rounded-xl"
-                />
+                  <img
+                    src="/respthrree.PNG"
+                    alt="image"
+                    className="rounded-xl"
+                  />
                 </Link>
               </div>
             </div>
