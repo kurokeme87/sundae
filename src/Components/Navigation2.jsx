@@ -132,7 +132,11 @@ const Navigation2 = ({currentTab}) => {
         {/* Links */}
         <div className="flex flex-col text-gray-200 gap-2">
           {linkButtons.map((item, index) => (
-            <Link to={item.path} className="w-full py-2 text-left" key={index}>
+            <Link to={item.path} className={`w-full py-2 text-left ${
+              activeTab === item.name
+                ? 'text-primary bg-primary/20'
+                : 'text-gray-200 hover:text-gray-200'
+            }`} key={index}>
               <span className="text-2xl pl-5">{item.name}</span>
             </Link>
           ))}
