@@ -5,11 +5,11 @@ const Fi_liquidify = () => {
 
     const EducationalCard = ({ image, title, subtitle, link }) => {
         return (
-            <article className='rounded-xl flex-flex-col overflow-hidden border border-gray-200/10'>
+            <article className='rounded-xl flex-col overflow-hidden border border-gray-200/10 max-h-min'>
                 {/* Image div */}
                 <div className='basis-1/2'>
                     <img src={image}
-                        className=''
+                        className='w-full'
                     />
                 </div>
                 {/* Text div */}
@@ -30,7 +30,7 @@ const Fi_liquidify = () => {
     return (
         <section className='bg-[#0F0619]'>
             <Navigation2 currentTab={"Liquidify"} />
-            <section className='flex flex-col min-h-[100vh]  border border-gray-200/10 mx-auto px-3'>
+            <section className='flex flex-col min-h-[100vh]  border border-gray-200/10 mx-auto px-3  mx-auto max-w-screen-2xl px-4 md:px-8'>
 
 
                 {/* Eduction and Help */}
@@ -38,7 +38,7 @@ const Fi_liquidify = () => {
                 <p className='text-xl text-gray-200 mt-5 mb-5 font-bold'>
                     Education and Help
                 </p>
-                <section className='flex flex-col gap-9'>
+                <section className='flex lg:flex-row flex-col gap-9'>
                 <EducationalCard
                     image={"../../public/liquidify1.png"}
                     title={"Liquidity Pools"}
@@ -48,7 +48,7 @@ const Fi_liquidify = () => {
                 <EducationalCard
                     image={"../../public/liquidify2.png"}
                     title={"Impermanent Loss"}
-                    subtitle={"Providing liquidity and accuring trading fees always comes with a risk. By provoding liquidify, you expose yourself to impermanent loww"}
+                    subtitle={"Providing liquidity and accuring trading fees always comes with a risk. By provoding liquidify, you expose yourself to impermanent low."}
                 />
                 </section>
             </section>
