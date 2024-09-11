@@ -40,13 +40,13 @@ const Fi_liquidify = () => {
                 </p>
                 <section className='flex lg:flex-row flex-col gap-9'>
                 <EducationalCard
-                    image={"../../public/liquidify1.png"}
+                    image={"/liquidify1.png"}
                     title={"Liquidity Pools"}
                     subtitle={"Here, you can see what liquidify pools are, how to provide and withdraw liquidity, and how you're able to accure trading fees by being a liquiditt provider on SundaeSwap."}
                 />
 
                 <EducationalCard
-                    image={"../../public/liquidify2.png"}
+                    image={"/liquidify2.png"}
                     title={"Impermanent Loss"}
                     subtitle={"Providing liquidity and accuring trading fees always comes with a risk. By provoding liquidify, you expose yourself to impermanent low."}
                 />
