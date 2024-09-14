@@ -5,7 +5,7 @@ import Navigation2 from '../Components/Navigation2'
 
 function Fi() {
   return (
-    <section className=' bg-[#0F0619] text-offwhite scrollbar-custom'>
+    <section className=' bg-[#0F0619] text-offwhite scrollbar-custom pt-20'>
       <Navigation2 currentTab={"Home"}/>
 
       {/* body*/}
@@ -13,7 +13,7 @@ function Fi() {
 
         {/* Hero 1 */}
         <section className='flex flex-col bg-[linear-gradient(155deg,_#0E132E_0%,_transparent_40%)] md:flex-row mt-7 md:mt-4 rounded-2xl'>
-          <div className='flex flex-col gap-6 px-8 md:px-10 py-8 rounded-3xl basis-1/2 justify-center'>
+          <div className='flex flex-col gap-6 px-9 md:px-10 py-8 rounded-3xl basis-1/2 justify-center'>
             <h1 className='text-5xl lg:text-7xl font-medium text-gray-200 leading-ight'>Fast, easy and secure trading</h1>
             <p className='text-2xl font-medium text-gray-200/60'>Experience low-fee trading and ultra-fast transaction settlment</p>
             <CWButton />

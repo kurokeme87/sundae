@@ -6,13 +6,13 @@ const Navigation2 = ({currentTab}) => {
     { name: "Home", path: "/fi" },
     { name: "Exchange", path: "/fi/exchange" },
     { name: "Liquidify", path: "/fi/liquidify" },
-    { name: "Yield Farming", path: "fi//yield-farming" },
-    { name: "Taste Test", path: "fi//taste-test" },
+    { name: "Yield Farming", path: "/fi/yield-farming" },
+    { name: "Taste Test", path: "/fi/taste-test" },
   ];
   const [activeTab, setactiveTab] = useState(currentTab)
   const [isMenyOpen, setisMenyOpen] = useState(false);
   return (
-    <nav className="z-50 sticky top-0 bg-[#0F0619]/95 flex justify-center items-center w-full h-[4.5rem] md:h-[5.3rem] px-5 border-b border-gray-200/10">
+    <nav className="fixed top-0 z-50 bg-[#0F0619]/95 flex justify-center items-center w-full h-[4.5rem] md:h-[5.3rem] px-5 border-b border-gray-200/10">
       {/* inner div */}
       <div className="h-10 w-full flex justify-between text-sm">
         {/* left div */}
