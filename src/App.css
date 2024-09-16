@@ -39,23 +39,4 @@ html {
 }
 
 
-/* Custom Scrollbar */
-.scrollbar-custom {
-  scrollbar-width: thin !important; /* Firefox */
-  scrollbar-color: #0E132E #f1f1f1 !important; /* Firefox */
-}
 
-/* For Chrome, Safari, and Edge */
-.scrollbar-custom::-webkit-scrollbar {
-  width: 12px !important;
-}
-
-.scrollbar-custom::-webkit-scrollbar-track {
-  background: #f1f1f1 !important;
-}
-
-.scrollbar-custom::-webkit-scrollbar-thumb {
-  background-color: #0E132E !important;
-  border-radius: 6px !important;
-  border: 3px solid #f1f1f1 !important;
-}
