@@ -1,0 +1,44 @@
+{
+    "liquidity": [
+        {
+            "combo": "ADA-USDM",
+            "percent": 1,
+            "version": 3,
+            "HRA": 1.38,
+            "price": 2.953949,
+            "tvl": "20.4M"
+        },
+        {
+            "combo": "ADA-SUNDAE",
+            "percent": 0.5,
+            "version": 3,
+            "HRA": 25.27,
+            "price": 0.013677,
+            "tvl": "4.2M"
+        },
+        {
+            "combo": "ADA-BTN",
+            "percent": 1.5,
+            "version": 3,
+            "HRA": "BMD",
+            "price": 1.06458,
+            "tvl": "2.7M"
+        },
+        {
+            "combo": "ADA-WMT",
+            "percent": 0.2,
+            "version": 1,
+            "HRA": "BMD",
+            "price": 0.578928,
+            "tvl": "2.36M"
+        },
+        {
+            "combo": "ADA-VMT",
+            "percent": 0.3,
+            "version": 3,
+            "HRA": 16.51,
+            "price": 2.953949,
+            "tvl": "20.4M"
+        }
+    ]
+}
