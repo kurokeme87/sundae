@@ -113,7 +113,7 @@ const TasteTestFAQ = () => {
         )
     }
 
-    const QuestionCard = ({ open, question, answer }) => {
+    const QuestionCard = ({ open, question, answer, index }) => {
         open = open ? open : false;
         return (
             <div className='flex flex-col transition-all duration-300'>
@@ -130,7 +130,7 @@ const TasteTestFAQ = () => {
                 </div>
 
                 {/* Quiestion anser */}
-                <div className={`${open ? "h-auto border-b border-primary/20" : "h-0"} transition-all duration-300 overflow-hidden`}>
+                <div className={`${open ? "h-auto "+index < 3?"border-b border-primary/20":"" : "h-0"} transition-all duration-300 overflow-hidden`}>
                 {/* <div className={`${open ? "max-h-[100rem] border-b border-primary/20" : "max-h-0"}  transition-all duration-300 overflow-hidden`}> */}
                     <p className='text-sm md:text-base text-gray-200/60 mb-4 mt-5 mx-6 leading-relaxed'>
                         {answer}
@@ -153,6 +153,7 @@ const TasteTestFAQ = () => {
                                 open={openQuestionCardTitle == item.Q}
                                 question={item.Q}
                                 answer={item.A}
+                                index={index}
                             />
                         ))
                     }
