@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Navigation2 from '../Components/Navigation2'
 import Star from "../Components/Star.jsx"
 import data from "../Data/liquidity.json"
+import EducationalCard from "../Components/EducationalCard.jsx"
 
 
 const Fi_liquidify = () => {
@@ -9,31 +10,6 @@ const Fi_liquidify = () => {
     const [maxTableEntries, setmaxTableEntries] = useState(20)
     const loadMoreEntries = () => {
         setmaxTableEntries(maxTableEntries + 10)
-    }
-
-    const EducationalCard = ({ image, title, subtitle, link }) => {
-        return (
-            <article className='rounded-xl flex-col overflow-hidden border border-gray-200/10 max-h-min'>
-                {/* Image div */}
-                <div className='basis-1/2'>
-                    <img src={image}
-                        className='w-full max-h-[9rem] object-cover'
-                    />
-                </div>
-                {/* Text div */}
-                <div className='basis-1/2 text-gray-200 py-3 px-4'>
-                    <p className='text-2xl font-bold mb-2'>
-                        {title}
-                    </p>
-                    <p className='text-sm md:text-base'>
-                        {subtitle}
-                    </p>
-                    <span className='text-sm md:text-base relative bottom-[2px] text-primary hover:text-primary/70'>
-                        <a href='link'>Learn More</a>
-                    </span>
-                </div>
-            </article>
-        )
     }
 
     const LiquidityTableRow = ({ index, combo, version, percent, hra, price, tvl }) => {
@@ -151,12 +127,12 @@ const Fi_liquidify = () => {
 
                     {/* table div */}
                     <div className='space-y-4'>
-                        <table className="table-auto md:table-fixd w-full">
+                        <table className="table-auto w-full">
                             <thead className='bg-tableColor1 text-gray-200/60 text-left text-xs h-[2.6rem] border-b border-gray-200/10'>
                                 <tr className='pl-4'>
                                     {
                                         ["Pool", "HRA", "Price", "TVL", "Manage"].map((item, index) => (
-                                            <th className='pl-4'>
+                                            <th className='pl-4' key={index}>
                                                 <h4 className='inline'>
                                                     {item}
                                                 </h4>
@@ -199,7 +175,7 @@ const Fi_liquidify = () => {
                 <p className='text-xl md:text-2xl text-gray-200 mt-5 mb-5 font-bold'>
                     Education and Help
                 </p>
-                <section className='flex lg:flex-ro flex-col gap-9 mb-9'>
+                <section className='flex flex-col gap-9 mb-9'>
                     <EducationalCard
                         image={"/liquidify1.png"}
                         title={"Liquidity Pools"}

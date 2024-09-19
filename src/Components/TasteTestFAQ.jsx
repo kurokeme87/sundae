@@ -130,7 +130,7 @@ const TasteTestFAQ = () => {
                 </div>
 
                 {/* Quiestion anser */}
-                <div className={`${open ? "h-auto "+index < 3?"border-b border-primary/20":"" : "h-0"} transition-all duration-300 overflow-hidden`}>
+                <div className={`${open ? "h-auto" : "h-0"} ${index < 3 && open ? "border-b border-primary/20" : ""} transition-all duration-300 overflow-hidden`}>
                 {/* <div className={`${open ? "max-h-[100rem] border-b border-primary/20" : "max-h-0"}  transition-all duration-300 overflow-hidden`}> */}
                     <p className='text-sm md:text-base text-gray-200/60 mb-4 mt-5 mx-6 leading-relaxed'>
                         {answer}
@@ -150,10 +150,10 @@ const TasteTestFAQ = () => {
                         QnA[questionTab - 1].map((item, index) => (
                             <QuestionCard
                                 key={index}
+                                index={index}
                                 open={openQuestionCardTitle == item.Q}
                                 question={item.Q}
                                 answer={item.A}
-                                index={index}
                             />
                         ))
                     }
