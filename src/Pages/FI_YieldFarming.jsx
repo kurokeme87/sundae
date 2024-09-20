@@ -8,31 +8,31 @@ const rewardLeaderboard = [
         program: "NMKR Farm 3",
         last_30_days: "4.99M",
         last_24H: "172K",
-        img_URL: "../public/sundaeYF.png"
+        img_URL: "/sundaeYF.png"
     },
     {
         program: "INDY Farm",
         last_30_days: "36K",
         last_24H: "1.2K",
-        img_URL: "../public/sundaeYF.png"
+        img_URL: "/sundaeYF.png"
     },
     {
         program: "FACT Farm",
         last_30_days: "90K",
         last_24H: "3K",
-        img_URL: "../public/sundaeYF.png"
+        img_URL: "/sundaeYF.png"
     },
     {
         program: "CLARITY Farm",
         last_30_days: "1.2M",
         last_24H: "39.0K",
-        img_URL: "../public/sundaeYF.png"
+        img_URL: "/sundaeYF.png"
     },
     {
         program: "Sundae Yield Farming v2",
         last_30_days: "13.5M",
         last_24H: "442K",
-        img_URL: "../public/sundaeYF.png"
+        img_URL: "/sundaeYF.png"
     },
 ]
 
@@ -73,13 +73,13 @@ const Fi_YieldFarming = () => {
 
                     {/* right hero image */}
                     <div className="hidden md:flex basis-1/2  items-center justify-center">
-                        <img src="../public/yield_farming.png" className=" scale-90" />
+                        <img src="/yield_farming.png" className=" scale-90" />
                     </div>
                 </section>
 
                 {/* noisy stats */}
                 <section className="mb-20 relative">
-                    {/* <div className="absolute -left-12 -right-12 -bottom-6 -top-12 overflow-hidden rounded-3xl dark:opacity-75" style={{ backgroundImage: 'url(../public/noise.svg)' }}></div> */}
+                    {/* <div className="absolute -left-12 -right-12 -bottom-6 -top-12 overflow-hidden rounded-3xl dark:opacity-75" style={{ backgroundImage: 'url(/noise.svg)' }}></div> */}
                     {/* overall stas */}
                     <div className="grid grid-cols-1 lg:grid-cols-3 space-y-10 md:space-y-0 h-auto">
                         <div className="space-y-5 col-span-1">
