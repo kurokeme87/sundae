@@ -41,8 +41,8 @@ const TableSection = ({ title, showDelegationInstead }) => {
 
                         {/* images */}
                         <span className='relative h-[25px] w-[40px] ml-3 mr-2'>
-                            <img className='rounded-full size-[25px] absolute left-0' src='../public/sundaeYF.png'></img>
-                            <img className='rounded-full size-[25px] absolute right-0 z-[2]' src='../public/liquid.png'></img>
+                            <img className='rounded-full size-[25px] absolute left-0' src='/sundaeYF.png'></img>
+                            <img className='rounded-full size-[25px] absolute right-0 z-[2]' src='/liquid.png'></img>
                         </span>
                         {/* name, version and percent */}
                         <div className='flex flex-col gap-0.5'>
@@ -74,7 +74,7 @@ const TableSection = ({ title, showDelegationInstead }) => {
                             hra !== "BMD" ?
                                 <div className='flex w-fit items-center gap-2 py-[1px] pl-2 rounded-xl text-xs md:text-sm text-gray-200/60 bg-buttonGray'>
                                     {hra}%
-                                    <img className='h-[20px] md:h-[25px]' src='../public/sundaeYF.png' />
+                                    <img className='h-[20px] md:h-[25px]' src='/sundaeYF.png' />
                                 </div>
                                 :
                                 <div className='text-xs md:text-sm text-gray-200/60 leading-tight'>
