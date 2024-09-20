@@ -119,7 +119,7 @@ const Fi_TasteTest = () => {
             </div>
 
             {/* Scroll to Buttons */}
-            <div className='hidden  md:flex flex-col gap-1 px-1 right-0 top-1/2 -translate-y-1/2'>
+            <div className='hidden fixed md:flex flex-col gap-1 px-1 right-0 top-1/2 -translate-y-1/2'>
                 {sections.map((id, index) => (
                     <ScrollToButton
                         key={index}
