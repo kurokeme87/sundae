@@ -58,8 +58,8 @@ const Fi_TasteTest = () => {
                 <div className='z-[1] absolute inset-0' style={{ backgroundColor: color, opacity: 0.05 }}>
 
                 </div>
-                <img className={`${index != 0 ? "hidden" : ""} object-cover size-[400px] absolute -right-40 -top-12 z-10 rotate-90 opacity-10 dark:opacity-5 bg-gray-200/30 dark:bg-gray-800/40 transition-colors duration-300object-cover`} src='../public/swirls.png' />
-                <img className={`${index != 3 ? "hidden" : ""} object-cover size-[400px] absolute -right-40 -top-32 z-10 rotate-45 opacity-10 dark:opacity-5 bg-gray-200/30 dark:bg-gray-800/40 transition-colors duration-300object-cover`} src='../public/swirls.png' />
+                <img className={`${index != 0 ? "hidden" : ""} object-cover size-[400px] absolute -right-40 -top-12 z-10 rotate-90 opacity-10 dark:opacity-5 bg-gray-200/30 dark:bg-gray-800/40 transition-colors duration-300object-cover`} src='/swirls.png' />
+                <img className={`${index != 3 ? "hidden" : ""} object-cover size-[400px] absolute -right-40 -top-32 z-10 rotate-45 opacity-10 dark:opacity-5 bg-gray-200/30 dark:bg-gray-800/40 transition-colors duration-300object-cover`} src='/swirls.png' />
                 {/* Icon image */}
                 <div class="z-[3] flex h-14 w-fit items-center justify-center rounded-full bg-[#0F0619] pl-4 pr-6" style={{ color: color }}>
                     {svg}
@@ -100,7 +100,7 @@ const Fi_TasteTest = () => {
     return (
         <section className='w-[100vw] h-full bg-background'>
             {/* Dark bg tint and tint */}
-            <div className='absolute w-[100vw] h-[100vh] bg-cover bg-center' style={{ backgroundImage: `url(../../public/liquid.png)`, }}>
+            <div className='absolute w-[100vw] h-[100vh] bg-cover bg-center' style={{ backgroundImage: `url(..//liquid.png)`, }}>
                 <div className='absolute inset-0 bg-background/90'></div>
             </div>
 
@@ -195,7 +195,7 @@ const Fi_TasteTest = () => {
                         </div>
 
                         <div className='flex'>
-                            <img src='../../public/no-taste-tests.png' className='h-full' />
+                            <img src='..//no-taste-tests.png' className='h-full' />
                         </div>
 
                     </div>
