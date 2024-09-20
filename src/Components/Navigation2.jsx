@@ -12,7 +12,7 @@ const Navigation2 = ({currentTab}) => {
   const [activeTab, setactiveTab] = useState(currentTab)
   const [isMenyOpen, setisMenyOpen] = useState(false);
   return (
-    <nav id="navbar" className="fixed top-0 z-50 bg-[#0F0619]/95 flex justify-center items-center w-full h-[4.5rem] md:h-[5.3rem] px-5 border-b border-gray-200/10">
+    <nav id="navbar" className="fixed top-0 z-50 bg-[#0F0619]/95 flex justify-center items-center w-screen h-[4.5rem] md:h-[5.3rem] px-5 border-b border-gray-200/10">
       {/* inner div */}
       <div className="h-10 w-full flex justify-between text-sm">
         {/* left div */}

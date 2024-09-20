@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+button{
+    text-wrap: nowrap;
+}
+
+@media (min-width: 760px) {   
+    ::-webkit-scrollbar{
+        display: none;
+    }
+}
