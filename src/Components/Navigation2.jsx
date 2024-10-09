@@ -1,7 +1,9 @@
 // import React from 'react'
 import { useState } from "react";
 import { Link } from "react-router-dom";
-const Navigation2 = ({currentTab}) => {
+import SundaeConnectButton from "./global/SundaeConnectButton";
+import ConnectedButton from "./global/ConnectedButton";
+const Navigation2 = ({ currentTab }) => {
   const linkButtons = [
     { name: "Home", path: "/fi" },
     { name: "Exchange", path: "/fi/exchange" },
@@ -9,10 +11,13 @@ const Navigation2 = ({currentTab}) => {
     { name: "Yield Farming", path: "/fi/yield-farming" },
     { name: "Taste Test", path: "/fi/taste-test" },
   ];
-  const [activeTab, setactiveTab] = useState(currentTab)
+  const [activeTab, setactiveTab] = useState(currentTab);
   const [isMenyOpen, setisMenyOpen] = useState(false);
   return (
-    <nav id="navbar" className="fixed top-0 z-50 bg-[#0F0619]/95 flex justify-center items-center w-screen h-[4.5rem] md:h-[5.3rem] px-5 border-b border-gray-200/10">
+    <nav
+      id="navbar"
+      className="fixed top-0 z-50 bg-[#0F0619]/95 flex justify-center items-center w-screen h-[4.5rem] md:h-[5.3rem] px-5 border-b border-gray-200/10"
+    >
       {/* inner div */}
       <div className="h-10 w-full flex justify-between text-sm">
         {/* left div */}
@@ -25,13 +30,17 @@ const Navigation2 = ({currentTab}) => {
           {/* Links */}
           <div className="hidden md:flex text-white gap-2 py-[2px]">
             {linkButtons.map((item, index) => (
-              <Link to={item.path} key={index} 
-              className={`px-3 h-full flex items-center justify-center rounded-md hover:bg-[#0E2142] transition-colors duration-300 ${
-                activeTab === item.name
-                  ? 'text-primary bg-primary/20'
-                  : 'text-gray-200 hover:text-gray-200'
-              }`}
-              onClick={()=>{setactiveTab(item.name)}}
+              <Link
+                to={item.path}
+                key={index}
+                className={`px-3 h-full flex items-center justify-center rounded-md hover:bg-[#0E2142] transition-colors duration-300 ${
+                  activeTab === item.name
+                    ? "text-primary bg-primary/20"
+                    : "text-gray-200 hover:text-gray-200"
+                }`}
+                onClick={() => {
+                  setactiveTab(item.name);
+                }}
               >
                 <span>{item.name}</span>
               </Link>
@@ -58,11 +67,17 @@ const Navigation2 = ({currentTab}) => {
           </div>
 
           <div className="hidden gap-2 lg:flex">
-            <button
-              className={`flex gap-2 text-sm items-center justify-center disabled:cursor-not-allowed disabled:opacity-60 group transition duration-300 border active:scale-[0.975] relative overflow-hidden group border-none text-white bg-gradient-to-r from-secondary to-primary hover:from-secondary-300 hover:to-primary-300 min-w-[125px] px-3 py-2 text-lg h-full max-h-8 rounded-lg lg:w-fit`}
-            >
-              Connect Wallet
-            </button>
+            <SundaeConnectButton
+              isNavbar
+              component={<ConnectedButton />}
+              connect={
+                <button
+                  className={`flex gap-2 text-sm items-center justify-center disabled:cursor-not-allowed disabled:opacity-60 group transition duration-300 border active:scale-[0.975] relative overflow-hidden group border-none text-white bg-gradient-to-r from-secondary to-primary hover:from-secondary-300 hover:to-primary-300 min-w-[125px] px-3 py-2 h-full max-h-8 rounded-lg lg:w-fit`}
+                >
+                  Connect Wallet
+                </button>
+              }
+            />
             <button
               className="flex gap-2 items-center justify-center disabled:cursor-not-allowed disabled:opacity-60 group transition duration-300 border active:scale-[0.975] hover:bg-gray-400 hover:dark:bg-gray-600/75 hover:bg-gray-400 hover:dark:bg-gray-600/75 bg-gray-300 dark:bg-gray-600 text-gray-800 dark:text-gray border-transparent min-w-[100px] px-3 text-sm h-8 rounded-lg h-8 w-8 !min-w-0 !px-0"
               data-testid="button"
@@ -132,11 +147,15 @@ const Navigation2 = ({currentTab}) => {
         {/* Links */}
         <div className="flex flex-col text-gray-200 gap-2">
           {linkButtons.map((item, index) => (
-            <Link to={item.path} className={`w-full py-2 text-left ${
-              activeTab === item.name
-                ? 'text-primary bg-primary/20'
-                : 'text-gray-200 hover:text-gray-200'
-            }`} key={index}>
+            <Link
+              to={item.path}
+              className={`w-full py-2 text-left ${
+                activeTab === item.name
+                  ? "text-primary bg-primary/20"
+                  : "text-gray-200 hover:text-gray-200"
+              }`}
+              key={index}
+            >
               <span className="text-2xl pl-5">{item.name}</span>
             </Link>
           ))}

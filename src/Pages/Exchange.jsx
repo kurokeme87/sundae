@@ -3,31 +3,36 @@ import CWButton from "../Components/CWButton";
 import AssetSwapModal from "../Components/AssetSwapModal";
 import Navigation2 from "../Components/Navigation2";
 import { Sliders, ChevronDown, ArrowDown, Info } from "lucide-react";
+import SundaeConnectButton from "../Components/global/SundaeConnectButton";
 
 function Exchange() {
-  const [activeTab, setActiveTab] = useState('Market');
+  const [activeTab, setActiveTab] = useState("Market");
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const bgcol = 'gradient-to-r from-secondary to-primary hover:from-secondary-300 hover:to-primary-300'
+  const bgcol =
+    "gradient-to-r from-secondary to-primary hover:from-secondary-300 hover:to-primary-300";
 
   const openModal = () => setIsModalOpen(true);
 
   return (
     <div>
-      <section className="bg-[#0F0619] text-gray-400 scrollbar-custom pt-14" style={{height:"100vh"}}>
-        <Navigation2 currentTab={"Exchange"}/>
+      <section
+        className="bg-[#0F0619] text-gray-400 scrollbar-custom pt-14"
+        style={{ height: "100vh" }}
+      >
+        <Navigation2 currentTab={"Exchange"} />
         <div className="relative grid place-items-center gap-4 lg:gap-8 lg:grid-cols-1 pt-8  md:pt-20 px-4">
           <div className="relative order-1 mx-auto flex h-fit w-full max-w-lg flex-col gap-8 self-start lg:order-2 lg:col-span-3 xl:col-span-2 xl:mx-0">
             <div data-guide-selector="exchange-widget">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-4">
-                  {['Market', 'Limit'].map((tab) => (
+                  {["Market", "Limit"].map((tab) => (
                     <h3
                       key={tab}
                       role="button"
                       className={`text-sm font-normal cursor-pointer rounded-full px-4 py-1.5 transition-colors duration-300 ${
                         activeTab === tab
-                          ? 'text-primary bg-primary/20'
-                          : 'text-gray-400 hover:text-gray-400'
+                          ? "text-primary bg-primary/20"
+                          : "text-gray-400 hover:text-gray-400"
                       }`}
                       onClick={() => setActiveTab(tab)}
                     >
@@ -41,7 +46,7 @@ function Exchange() {
                   </button>
                 </div>
               </div>
-              
+
               <div className="relative mt-4">
                 <div className="flex flex-col gap-4">
                   <div className="grid gap-4 xl:gap-4">
@@ -52,11 +57,14 @@ function Exchange() {
                       usdValue="$0.00"
                       onAssetClick={openModal}
                     />
-                    
-                    <div className="z-10 h-8 w-8 rounded-full !transition-all active:scale-[0.975] text-gray-400 border-[#0f0619] border-4 bg-[#120b1b] cursor-not-allowed select-none text-gray-400 absolute right-1/2 translate-x-1/2 bottom-1/2 translate-y-1/2" style={{marginBottom:"30px"}}>
+
+                    <div
+                      className="z-10 h-8 w-8 rounded-full !transition-all active:scale-[0.975] text-gray-400 border-[#0f0619] border-4 bg-[#120b1b] cursor-not-allowed select-none text-gray-400 absolute right-1/2 translate-x-1/2 bottom-1/2 translate-y-1/2"
+                      style={{ marginBottom: "30px" }}
+                    >
                       <ArrowDown className="absolute h-4 w-4 text-current right-1/2 translate-x-1/2 bottom-1/2 translate-y-1/2" />
                     </div>
-                    
+
                     <AssetInput
                       label="To buy approximately"
                       asset="Select Token"
@@ -65,12 +73,29 @@ function Exchange() {
                       onAssetClick={openModal}
                     />
                   </div>
-                  <button className={`flex gap-2 items-center justify-center disabled:cursor-not-allowed disabled:opacity-60 group transition duration-300 border active:scale-[0.975] relative overflow-hidden group border-none text-white bg-${bgcol} min-w-[125px] px-5 text-lg h-11 rounded-lg lg:w-full`}>
-                    Connect Wallet
-                  </button>
+                  <SundaeConnectButton
+                    isNavbar
+                    connect={
+                      <button
+                        className={`flex gap-2 items-center justify-center disabled:cursor-not-allowed disabled:opacity-60 group transition duration-300 border active:scale-[0.975] relative overflow-hidden group border-none text-white bg-${bgcol} min-w-[125px] px-5 text-lg h-11 rounded-lg lg:w-full`}
+                      >
+                        Connect Wallet
+                      </button>
+                    }
+                    component={
+                      <button
+                        className={`flex gap-2 items-center justify-center disabled:cursor-not-allowed disabled:opacity-60 group transition duration-300 border active:scale-[0.975] relative overflow-hidden group border-none text-white bg-${bgcol} min-w-[125px] px-5 text-lg h-11 rounded-lg lg:w-full`}
+                      >
+                        Swap
+                      </button>
+                    }
+                  />
                 </div>
               </div>
-              <AssetSwapModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+              <AssetSwapModal
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+              />
             </div>
           </div>
         </div>
@@ -79,7 +104,14 @@ function Exchange() {
   );
 }
 
-const AssetInput = ({ label, asset, balance, usdValue, showUsdValue = true, onAssetClick }) => {
+const AssetInput = ({
+  label,
+  asset,
+  balance,
+  usdValue,
+  showUsdValue = true,
+  onAssetClick,
+}) => {
   return (
     <div className="relative flex flex-col space-y-2">
       <div className="grid min-h-[132px] gap-4 rounded-lg border-transparent p-4 transition-colors duration-300 border hover:border-gray-600 hover:border-1 bg-[#120b1b]">
@@ -96,22 +128,23 @@ const AssetInput = ({ label, asset, balance, usdValue, showUsdValue = true, onAs
                 placeholder="0"
                 className="outline-none w-full flex-grow text-4xl text-gray-400 bg-transparent"
                 style={{
-                  maskImage: 'linear-gradient(to left, transparent, #000 7%, #000 100%, transparent)',
+                  maskImage:
+                    "linear-gradient(to left, transparent, #000 7%, #000 100%, transparent)",
                 }}
               />
             </div>
-            <div 
+            <div
               onClick={onAssetClick}
               className="flex items-center gap-2 h-9 w-fit rounded-full select-none border-gray-600 border shadow-lg transition duration-300 active:scale-[0.975] cursor-pointer hover:bg-gray-700 pl-1 pr-2"
-            >  
-              {asset === 'ADA' ? (
+            >
+              {asset === "ADA" ? (
                 <span className="bg-[#0F0619] transition duration-300 h-6 w-6 rounded-full">
                   <img
                     src="https://app.sundae.fi/static/images/cardano.png"
                     alt="ADA"
                     className="w-full rounded-full bg-gray-800 transition-colors duration-300 rounded-none !bg-transparent object-cover"
                     width="24"
-                    style={{ aspectRatio: '1 / 1' }}
+                    style={{ aspectRatio: "1 / 1" }}
                   />
                 </span>
               ) : null}
@@ -131,15 +164,16 @@ const AssetInput = ({ label, asset, balance, usdValue, showUsdValue = true, onAs
           <div className="text-xs text-gray-400 font-normal flex flex-1 items-center justify-end gap-1 text-right transition-colors duration-300">
             <span className="text-xs text-gray-400 font-normal flex items-center transition-colors duration-300">
               Available Balance
-              {asset === 'ADA' && (
+              {asset === "ADA" && (
                 <div className="text-gray-400 transition-opacity duration-300 hover:opacity-75 cursor-help">
                   <Info className="mx-[2px] h-3 w-3 cursor-help text-gray-400" />
                 </div>
-              )}:
-            </span>{' '}
+              )}
+              :
+            </span>{" "}
             <div className="inline-flex">
               <span className="text-xs text-gray-400 font-normal transition-colors duration-300">
-                {asset === 'ADA' ? `₳${balance}` : balance}
+                {asset === "ADA" ? `₳${balance}` : balance}
               </span>
             </div>
           </div>
