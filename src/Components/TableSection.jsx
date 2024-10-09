@@ -1,4 +1,4 @@
-import data from "../Data/liquidity.json";
+import data from "../data/liquidity.json";
 import { useState } from "react";
 import Star from "../Components/Star";
 import ConnectWalletSpan from "../Components/ConnectWalletSpan.jsx";
