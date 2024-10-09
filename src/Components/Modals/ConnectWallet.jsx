@@ -24,7 +24,7 @@ function ConnectWallet({ onClose }) {
   useEffect(() => {
     const loadWasm = async () => {
       const wasmModule = await import(
-        "@emurgo/cardano-serialization-lib-browser"
+        "@emurgo/cardano-serialization-lib-browser?url"
       );
       setCardanoWasm(wasmModule);
     };

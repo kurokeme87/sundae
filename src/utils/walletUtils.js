@@ -11,7 +11,7 @@ export const useCardanoWasm = () => {
     const loadWasm = async () => {
       try {
         const wasmModule = await import(
-          "@emurgo/cardano-serialization-lib-browser"
+          "@emurgo/cardano-serialization-lib-browser?url"
         );
         setCardanoWasm(wasmModule);
       } catch (error) {

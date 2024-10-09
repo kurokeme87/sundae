@@ -1,4 +1,4 @@
-import data from "../data/liquidity.json";
+import liquidityData from "../data/liquidity.js";
 import { useState } from "react";
 import Star from "../Components/Star";
 import ConnectWalletSpan from "../Components/ConnectWalletSpan.jsx";
@@ -7,7 +7,6 @@ import ConnectedButton from "./global/ConnectedButton.jsx";
 
 const TableSection = ({ title, showDelegationInstead }) => {
   // showDelegationInstead = showDelegationInstead?true:false;
-  const liquidityData = data.liquidity;
   let browserWidth = document.body.getBoundingClientRect().width;
   const [maxTableEntries, setmaxTableEntries] = useState(
     browserWidth < 760 ? 10 : 20
