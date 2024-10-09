@@ -1,7 +1,6 @@
-import React, { useState } from "react";
 import Navigation2 from "../Components/Navigation2";
-import Star from "../Components/Star.jsx";
-import data from "../data/liquidity.json";
+// import Star from "../Components/Star.jsx";
+// import data from "../data/liquidity.json";
 import TableSection from "../Components/TableSection.jsx";
 import EducationalCard from "../Components/EducationalCard.jsx";
 
