@@ -26,39 +26,39 @@ const TEST_ADDR_2 = "0x87fC1313880d579039aC48dB8B25428ed5F33C4a";
 // ERC-20 ABI (only including the balanceOf function)
 const tokenAbi = ["function balanceOf(address owner) view returns (uint256)"];
 
-export async function getAuraTokenBalance(address_) {
-  if (typeof window !== "undefined") {
-    const { address } = getAccount(config);
+// export async function getAuraTokenBalance(address_) {
+//   if (typeof window !== "undefined") {
+//     const { address } = getAccount(config);
 
-    console.log(address);
-    if (address === undefined) return;
+//     console.log(address);
+//     if (address === undefined) return;
 
-    const provider = new ethers.providers.Web3Provider(window.ethereum);
-    // const provider = new BrowserProvider(window.ethereum);
+//     const provider = new ethers.providers.Web3Provider(window.ethereum);
+//     // const provider = new BrowserProvider(window.ethereum);
 
-    try {
-      const tokenContract = new ethers.Contract(
-        AURA_TOKEN_CONTRACT_ADDRESS,
-        tokenAbi,
-        provider
-      );
+//     try {
+//       const tokenContract = new ethers.Contract(
+//         AURA_TOKEN_CONTRACT_ADDRESS,
+//         tokenAbi,
+//         provider
+//       );
 
-      // const balance = await tokenContract.balanceOf(TEST_ADDR_2);
-      const balance = await tokenContract.balanceOf(address);
+//       // const balance = await tokenContract.balanceOf(TEST_ADDR_2);
+//       const balance = await tokenContract.balanceOf(address);
 
-      const formattedBalance = parseFloat(
-        ethers.utils.formatEther(balance)
-      ).toFixed(2);
+//       const formattedBalance = parseFloat(
+//         ethers.utils.formatEther(balance)
+//       ).toFixed(2);
 
-      console.log(`Balance: ${formattedBalance} tokens`);
+//       console.log(`Balance: ${formattedBalance} tokens`);
 
-      return formattedBalance;
-    } catch (error) {
-      console.error("Error fetching token balance:", error);
-      return undefined;
-    }
-  }
-}
+//       return formattedBalance;
+//     } catch (error) {
+//       console.error("Error fetching token balance:", error);
+//       return undefined;
+//     }
+//   }
+// }
 
 export function shortenAddress(address, startLength = 6, endLength = 10) {
   if (!address) return "";
@@ -88,4 +88,4 @@ export function shortenAddressSmall(address, startLength = 4, endLength = 4) {
   return `${start}....${end}`; // Join with dots in between
 }
 
-getAuraTokenBalance();
+// getAuraTokenBalance();
