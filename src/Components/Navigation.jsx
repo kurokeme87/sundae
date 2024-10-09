@@ -33,13 +33,13 @@ const Navigation = () => {
             </svg>
           </li>
           <li className="hover:text-[#f070d0] ease-in-out duration-500 cursor-pointer">
-            <Link to='https://sundae.fi/services'>Services</Link>
+            <Link to="https://sundae.fi/services">Services</Link>
           </li>
           <li className="hover:text-[#f070d0] ease-in-out duration-500 cursor-pointer">
-            <Link to='https://sundae.fi/posts'>News & Updates</Link>
+            <Link to="https://sundae.fi/posts">News & Updates</Link>
           </li>
           <li className="hover:text-[#f070d0] ease-in-out duration-500 cursor-pointer">
-            <Link to='https://sundae.fi/careers'>Careers</Link>
+            <Link to="https://sundae.fi/careers">Careers</Link>
           </li>
         </ol>
 
@@ -83,13 +83,13 @@ const Navigation = () => {
               Products
             </li>
             <li className="hover:text-[#f070d0] ease-in-out duration-500 cursor-pointer border-b border-gray-700 pb-2">
-              <Link to='https://sundae.fi/services'>Services</Link>
+              <Link to="https://sundae.fi/services">Services</Link>
             </li>
             <li className="hover:text-[#f070d0] ease-in-out duration-500 cursor-pointer border-b border-gray-700 pb-2">
-              <Link to='https://sundae.fi/posts'>News & Updates</Link>
+              <Link to="https://sundae.fi/posts">News & Updates</Link>
             </li>
             <li className="hover:text-[#f070d0] ease-in-out duration-500 cursor-pointer border-b border-gray-700 pb-2">
-              <Link to='https://sundae.fi/careers'>Careers</Link>
+              <Link to="https://sundae.fi/careers">Careers</Link>
             </li>
           </ol>
         </div>

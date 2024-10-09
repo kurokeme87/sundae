@@ -1,22 +1,35 @@
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
 import { Dialog } from "@headlessui/react";
+import tokenList from "../data/tokenList";
+import useApp from "./hooks/useApp";
+import { IoIosCheckmarkCircleOutline } from "react-icons/io";
 
-const AssetSwapModal = ({ isOpen, onClose }) => {
+const AssetSwapModal = ({ isOpen, onClose, onSelect, type }) => {
+  const { fromAssets, toAssets } = useApp();
   const [searchTerm, setSearchTerm] = useState("");
+  const [filteredToken, setFilteredToken] = useState(tokenList);
 
   // Placeholder function for loading more assets
   const loadMoreAssets = () => {
     console.log("Loading more assets...");
   };
 
+  useEffect(() => {
+    if (searchTerm) {
+      const filterData = tokenList.filter((item) =>
+        item.name.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+      setFilteredToken(filterData);
+    } else {
+      setFilteredToken(tokenList);
+    }
+  }, [searchTerm]);
+
   return (
     <Dialog open={isOpen} onClose={onClose} className="relative z-50">
-      <div
-        className="fixed  z-10"
-        aria-hidden="true"
-      />
-      <div className="fixed inset-0 bg-black/10 backdrop-blur-sm inset-0 flex items-center justify-center p-4">
-        <Dialog.Panel className="max-w-xl w-full mt-10 max-w-md transform overflow-hidden rounded-2xl bg-[#0d0e23] p-6 text-left align-middle shadow-xl transition-all">
+      <div className="fixed  z-10" aria-hidden="true" />
+      <div className="fixed inset-0 bg-black/10 backdrop-blur-sm flex items-center justify-center p-4">
+        <Dialog.Panel className="max-w-xl w-full mt-10 transform overflow-hidden rounded-2xl bg-[#0d0e23] p-6 text-left align-middle shadow-xl transition-all">
           <div className="absolute right-4 top-4">
             <button
               onClick={onClose}
@@ -47,14 +60,58 @@ const AssetSwapModal = ({ isOpen, onClose }) => {
           <p className="text-sm text-gray-500 mb-4">
             Search for a token by name or policy ID.
           </p>
-          {/* <input
+          <input
             type="text"
-            placeholder="Search assets..."
-            className="w-full p-2 border border-gray-300 rounded-lg mb-4"
+            placeholder="Search token by name or ticker"
+            className="w-full p-2 rounded-lg mb-4 placeholder:text-gray-600 text-sm font-medium text-[#e6ecf0] bg-[#0D0415] border border-gray-800 focus:outline-blue-700 outline-none"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-          /> */}
+          />
+
           <div className="max-h-[20rem] overflow-y-auto">
+            {filteredToken.map((item, index) => (
+              <div
+                role="button"
+                onClick={() => {
+                  onSelect(item);
+                  onClose();
+                }}
+                key={index}
+                className={`${
+                  type === "pay" && fromAssets?.symbol === item.symbol
+                    ? "border-[#219289]"
+                    : "border-gray-800"
+                }  ${
+                  type === "receive" && toAssets?.symbol === item.symbol
+                    ? "border-[#219289]"
+                    : "border-gray-800"
+                } mb-2 p-4 flex items-start gap-4 rounded-lg bg-[#110b1b] border hover:bg-[#1F1928] ease transition-all duration-300`}
+              >
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  height={34}
+                  width={34}
+                  className="rounded-full"
+                />
+
+                <div className="space-y-1">
+                  <p className="text-white">{item.name}</p>
+                  <p className="text-xs text-[#e6ecf066]">{item.symbol}</p>
+                </div>
+
+                {(type === "pay" && fromAssets?.symbol === item.symbol) ||
+                (type === "receive" && toAssets?.symbol === item.symbol) ? (
+                  <div className="rounded-xl py-0.5 px-2.5 bg-[#122832] text-[#219289] flex justify-start items-center gap-1">
+                    <IoIosCheckmarkCircleOutline className="text-sm" />
+                    <p className="text-[10px] font-medium">Selected</p>
+                  </div>
+                ) : null}
+              </div>
+            ))}
+          </div>
+
+          {/* <div className="max-h-[20rem] overflow-y-auto">
             {[1, 2, 3].map((item) => (
               <div
                 key={item}
@@ -71,7 +128,7 @@ const AssetSwapModal = ({ isOpen, onClose }) => {
                 </div>
               </div>
             ))}
-          </div>
+          </div> */}
           {/* <button
             onClick={loadMoreAssets}
             className="mt-4 w-full p-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
